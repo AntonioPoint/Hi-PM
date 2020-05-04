@@ -1,0 +1,22 @@
+<view class="container">
+	<text class="title">上传图片，会自动显示图片的主要特征标签</text>
+	<view class="author"><text>「 by anton 」</text></view>
+
+	<view class="content">
+		<view class="display">
+			<image class="{{filepath?'display-img-noborder':'display-img'}}" src="{{filepath?filepath:'/images/background.png'}}" mode="widthFix" />
+		</view>
+
+		<view class="tag-container">
+			<text class="tag" wx:for="{{imageTag}}" wx:key="index">{{item.Name}}</text>
+		</view>
+
+	</view>
+
+	<view class="upload-container">
+		<button class="upload" bindtap="onCheckImageTag">
+			<image mode="widthFix" src="/images/upload.png" />
+			<text>上传</text>
+		</button>
+	</view>
+</view>
